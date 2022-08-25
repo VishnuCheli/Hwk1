@@ -1,0 +1,20 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from collections import OrderedDict
+
+N = int(input())
+OD = OrderedDict()
+arr = []
+
+for i in range(N):
+    
+    item_info = input().split()
+    item_name = " ".join(item_info[:len(item_info)-1])
+    item_price = int(item_info[len(item_info) - 1])
+    arr.append([item_name, item_price])
+    OD.update({item_name: item_price})
+
+for val in arr:
+    OD[val[0]] = arr.count(val) * val[1]
+    
+for val in OD.keys():
+    print(val, str(OD[val]))
