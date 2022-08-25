@@ -1,0 +1,28 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from collections import deque as dq
+
+num_ops = int(input())
+
+d_q = dq()
+
+for i in range(num_ops):
+    
+    data = input().split()
+    op = data[0]
+    
+    if len(data) > 1:
+        val = data[1]
+    
+    if op == "append":
+        d_q.append(val)
+    
+    elif op == "pop":
+        d_q.pop()
+        
+    elif op == "popleft":
+        d_q.popleft()
+        
+    elif op == "appendleft":
+        d_q.appendleft(val)
+        
+print(" ".join(d_q))
